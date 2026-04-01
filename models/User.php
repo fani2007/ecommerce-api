@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class User extends Model
+{
+    protected $fillable = ['name', 'email', 'phone', 'password', 'role'];
+
+    protected $hidden = ['password'];
+
+    // Relasi One-to-One: user punya satu profil
+    public function profile(): HasOne
+    {
+        return $this->hasOne(UserProfile::class);
+    }
+
+    // Relasi One-to-Many: user punya banyak order
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    // Relasi One-to-Many: user punya banyak review
+    public function reviews(): HasMany
+    {
+        return $this->hasMany(Review::class);
+    }
+}
