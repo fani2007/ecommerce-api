@@ -6,10 +6,6 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * Middleware milik Lidia — Modul OrderItem
- * Memastikan field quantity pada request adalah angka positif
- */
 class CheckQuantityPositive
 {
     public function handle(Request $request, Closure $next): Response

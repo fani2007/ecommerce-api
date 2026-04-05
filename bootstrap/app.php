@@ -12,14 +12,13 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // Daftarkan semua middleware alias di sini
         $middleware->alias([
-            'check.group.header'    => \App\Http\Middleware\CheckGroupHeader::class,
+            'check.group.header' => \App\Http\Middleware\CheckGroupHeader::class,
             'check.userid.required' => \App\Http\Middleware\CheckUserIdRequired::class,
-            'check.category.name'   => \App\Http\Middleware\CheckCategoryName::class,
-            'check.product.stock'   => \App\Http\Middleware\CheckProductStock::class,
-            'check.order.status'    => \App\Http\Middleware\CheckOrderStatus::class,
-            'check.tag.name'        => \App\Http\Middleware\CheckTagName::class,
+            'check.category.name' => \App\Http\Middleware\CheckCategoryName::class,
+            'check.product.stock' => \App\Http\Middleware\CheckProductStock::class,
+            'check.order.status' => \App\Http\Middleware\CheckOrderStatus::class,
+            'check.tag.name' => \App\Http\Middleware\CheckTagName::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * Middleware milik Naila — Modul Order
- * Memblokir perubahan pada order yang sudah berstatus 'cancelled'
- */
 class CheckOrderStatus
 {
     public function handle(Request $request, Closure $next): Response

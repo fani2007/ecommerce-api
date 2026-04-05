@@ -6,10 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * Middleware milik Rafani — Modul User
- * Memeriksa header X-Api-Key wajib ada dan bernilai benar
- */
+
 class CheckApiHeader
 {
     public function handle(Request $request, Closure $next): Response
@@ -23,7 +20,6 @@ class CheckApiHeader
             ], 401);
         }
 
-        // Nilai key disimpan di .env sebagai APP_API_KEY
         if ($apiKey !== config('app.api_key', 'secret-key-ecommerce')) {
             return response()->json([
                 'success' => false,

@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * Middleware milik Shilla — Modul Category & Product
- * Memastikan kategori yang dirujuk dalam request berstatus aktif
- */
 class CheckCategoryActive
 {
     public function handle(Request $request, Closure $next): Response

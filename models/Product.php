@@ -13,25 +13,21 @@ class Product extends Model
         'category_id', 'name', 'slug', 'description', 'price', 'stock', 'image', 'is_active'
     ];
 
-    // Relasi One-to-Many (inverse): produk milik satu kategori
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
 
-    // Relasi Many-to-Many: produk punya banyak tag
     public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class, 'product_tag');
     }
 
-    // Relasi One-to-Many: produk punya banyak item order
     public function orderItems(): HasMany
     {
         return $this->hasMany(OrderItem::class);
     }
 
-    // Relasi One-to-Many: produk punya banyak review
     public function reviews(): HasMany
     {
         return $this->hasMany(Review::class);

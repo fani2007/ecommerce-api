@@ -6,10 +6,6 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * Middleware milik Nabila — Modul Tag
- * Memastikan field name pada request POST/PUT tag tidak kosong
- */
 class CheckTagNameNotEmpty
 {
     public function handle(Request $request, Closure $next): Response

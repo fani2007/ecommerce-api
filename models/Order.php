@@ -13,13 +13,11 @@ class Order extends Model
         'shipping_address', 'shipping_city', 'shipping_postal_code'
     ];
 
-    // Relasi One-to-Many (inverse): order milik satu user
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    // Relasi One-to-Many: satu order punya banyak item
     public function orderItems(): HasMany
     {
         return $this->hasMany(OrderItem::class);

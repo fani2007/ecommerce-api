@@ -6,10 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * Middleware milik Dewi — Modul Review
- * Memastikan field rating bernilai antara 1 sampai 5
- */
+
 class CheckRatingRange
 {
     public function handle(Request $request, Closure $next): Response

@@ -12,19 +12,16 @@ class User extends Model
 
     protected $hidden = ['password'];
 
-    // Relasi One-to-One: user punya satu profil
     public function profile(): HasOne
     {
         return $this->hasOne(UserProfile::class);
     }
 
-    // Relasi One-to-Many: user punya banyak order
     public function orders(): HasMany
     {
         return $this->hasMany(Order::class);
     }
 
-    // Relasi One-to-Many: user punya banyak review
     public function reviews(): HasMany
     {
         return $this->hasMany(Review::class);

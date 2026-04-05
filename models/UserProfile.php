@@ -11,7 +11,6 @@ class UserProfile extends Model
         'user_id', 'address', 'city', 'province', 'postal_code', 'birth_date', 'avatar'
     ];
 
-    // Relasi One-to-One (inverse): profil milik satu user
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

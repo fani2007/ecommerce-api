@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Category extends Model
 {
     protected $fillable = ['name', 'slug', 'description', 'is_active'];
-
-    // Relasi One-to-Many: satu kategori punya banyak produk
     public function products(): HasMany
     {
         return $this->hasMany(Product::class);
